@@ -1,4 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Computer Shortcuts & Concepts — CompshortcutsNconcepts</title>
+  <meta name="description" content="Shortcuts, tips and computer concepts — quick reference and tutorials." />
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071028;
+      --card:#0f1b2b;
+      --muted:#9fb0c8;
+      --accent:#00d1ff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxwidth:1100px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #031426 0%, var(--bg) 100%);
+      color: #e6f6ff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxwidth);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#7ae0ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#021018;
+      font-weight:700;
+      font-size:18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+    .sitename{
+      line-height:1;
+    }
+    .sitename h1{margin:0;font-size:16px;font-weight:700}
+    .sitename p{margin:0;color:var(--muted);font-size:12px}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .nav-link{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 12px;
+      border-radius:10px;
+    }
+    .nav-link:hover{background:var(--glass);color:var(--accent)}
+
+    main{
+      background:transparent;
+      margin-top:6px;
+    }
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:20px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-bottom:18px;
+      box-shadow: 0 6px 20px rgba(2,8,23,0.6);
+    }
+
+    .hero-top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between}
+    .hero-left h2{margin:0;font-size:20px}
+    .hero-left p{margin:6px 0 0;color:var(--muted)}
+    .cta{
+      background:linear-gradient(90deg,var(--accent),#6ef0ff);
+      color:#021018;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:12px;
+      min-height:90px;
+      box-shadow: 0 6px 14px rgba(3,10,20,0.5);
+    }
+    .card h3{margin:0 0 8px 0;font-size:14px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* shortcuts table area */
+    .shortcuts-area{
+      margin-top:18px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      flex-direction:column;
+    }
+    .search-row{display:flex;gap:8px;align-items:center}
+    .search{
+      background:var(--card);
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      width:100%;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border-radius:10px;
+      overflow:hidden;
+    }
+    th,td{
+      padding:10px 12px;
+      font-size:13px;
+      text-align:left;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    th{background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
+    tr:hover td{background:rgba(255,255,255,0.01)}
+
+    footer{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:620px){
+      body{padding:12px}
+      .grid{grid-template-columns:1fr}
+      .hero-top{flex-direction:column;align-items:flex-start}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      nav{width:100%;overflow:auto}
+    }
+
+    /* subtle utilities */
+    .muted{color:var(--muted)}
+    .accent{color:var(--accent)}
+    .small{font-size:12px}
+  </style>
+</head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>This website belongs to CompshortcutsNconcepts.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">CS</div>
+        <div class="sitename">
+          <h1>Computer Shortcuts & Concepts</h1>
+          <p class="small muted">CompshortcutsNconcepts</p>
+        </div>
+      </div>
+
+      <nav>
+        <a class="nav-link" href="#shortcuts">Shortcuts</a>
+        <a class="nav-link" href="#concepts">Concepts</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link cta" href="https://github.com/CompshortcutsNconcepts" target="_blank" rel="noopener">GitHub Repo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-top">
+          <div class="hero-left">
+            <h2 id="hero-title">Fast computer shortcuts & clear concepts — for beginners</h2>
+            <p class="muted">Quick references, keyboard shortcuts, and short explanations to speed up your computer skills.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+            <a class="cta" href="#shortcuts">Explore Shortcuts</a>
+            <span class="muted small">Updated: <strong class="accent">Today</strong></span>
+          </div>
+        </div>
+
+        <div class="grid" aria-hidden="false">
+          <div class="card">
+            <h3>Copy & Paste</h3>
+            <p>Windows: <strong>Ctrl + C</strong> / <strong>Ctrl + V</strong> — Mac: <strong>Cmd + C</strong> / <strong>Cmd + V</strong></p>
+          </div>
+          <div class="card">
+            <h3>Find</h3>
+            <p>Find text quickly: <strong>Ctrl + F</strong> (Windows) or <strong>Cmd + F</strong> (Mac).</p>
+          </div>
+          <div class="card">
+            <h3>Switch Apps</h3>
+            <p>Switch between apps: <strong>Alt + Tab</strong> (Windows) or <strong>Cmd + Tab</strong> (Mac).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="shortcuts" class="shortcuts-area" aria-label="Shortcuts list">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <h2 style="margin:0">Shortcuts & Quick Tips</h2>
+          <div style="display:flex;gap:8px;align-items:center;width:320px;max-width:100%">
+            <input id="search" class="search" placeholder="Search shortcuts or concepts..." aria-label="Search shortcuts">
+          </div>
+        </div>
+
+        <div>
+          <table id="shortcuts-table" role="table" aria-label="Shortcuts table">
+            <thead>
+              <tr>
+                <th>Shortcut / Concept</th>
+                <th>Action</th>
+                <th>Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ctrl + C</td>
+                <td>Copy selected</td>
+                <td>Windows</td>
+              </tr>
+              <tr>
+                <td>Ctrl + V</td>
+                <td>Paste</td>
+                <td>Windows</td>
+              </tr>
+              <tr>
+                <td>Ctrl + Z</td>
+                <td>Undo</td>
+                <td>Windows</td>
+              </tr>
+              <tr>
+                <td>Cmd + C</td>
+                <td>Copy selected</td>
+                <td>Mac</td>
+              </tr>
+              <tr>
+                <td>Cmd + V</td>
+                <td>Paste</td>
+                <td>Mac</td>
+              </tr>
+              <tr>
+                <td>Alt + Tab</td>
+                <td>Switch apps</td>
+                <td>Windows</td>
+              </tr>
+              <tr>
+                <td>Task Manager</td>
+                <td>Ctrl + Shift + Esc</td>
+                <td>Windows</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="concepts" style="margin-top:18px">
+        <h2 style="margin:0 0 10px 0">Core Concepts</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div class="card">
+            <h3>Files & Folders</h3>
+            <p class="muted">Files store your data. Folders help organize files into groups.</p>
+          </div>
+          <div class="card">
+            <h3>Operating System</h3>
+            <p class="muted">The OS manages hardware and software (Windows, macOS, Linux).</p>
+          </div>
+          <div class="card">
+            <h3>Cloud vs Local</h3>
+            <p class="muted">Cloud stores files online; local stores on your device. Each has pros and cons.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px">
+        <h2 style="margin:0 0 10px 0">Contact & More</h2>
+        <p class="muted">Want more shortcuts or tutorials? Open an issue in the GitHub repo or update this site any time.</p>
+        <p class="small muted">Repo: <a class="accent" href="https://github.com/CompshortcutsNconcepts" target="_blank" rel="noopener">github.com/CompshortcutsNconcepts</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <strong>CompshortcutsNconcepts</strong></div>
+      <div class="muted small">Built with GitHub Pages • Simple modern tech theme</div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple client-side search for the shortcuts table
+    (function(){
+      const search = document.getElementById('search');
+      const rows = Array.from(document.querySelectorAll('#shortcuts-table tbody tr'));
+      function filter(q){
+        q = (q||'').trim().toLowerCase();
+        rows.forEach(r=>{
+          const text = r.textContent.toLowerCase();
+          r.style.display = text.includes(q) ? '' : 'none';
+        });
+      }
+      search.addEventListener('input', e => filter(e.target.value));
+    })();
+  </script>
 </body>
+  </html>
